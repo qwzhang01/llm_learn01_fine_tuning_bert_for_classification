@@ -1,0 +1,17 @@
+from datasets import load_dataset
+
+# 加载在线数据
+# dataset = load_dataset(path="lansinuote/ChnSentiCorp", cache_dir="data/")
+# print(dataset)
+# dataset.to_csv(path_or_buf=r"/Users/avinzhang/git/avin-kit/llm_test/test02/data/lansinuote_ChnSentiCorp")
+
+datasets = load_dataset("/Users/avinzhang/git/avin-kit/llm_test/test02/data/lansinuote___chn_senti_corp")
+print(datasets)
+
+train_data = datasets['train']
+for data in train_data:
+    print(data)
+
+# 加载 csv 格式数据
+# datasets = load_dataset(path="csv", data_files="")
+# print(datasets)

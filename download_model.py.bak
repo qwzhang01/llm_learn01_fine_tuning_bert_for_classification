@@ -1,0 +1,18 @@
+# 下载模型
+# from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForMaskedLM
+
+# model_name = "uer/gpt2-chinese-cluecorpussmall"
+# cache_dir = "model/uer/gpt2-chinese-cluecorpussmall"
+
+model_name = "bert-base-chinese"
+cache_dir = "model/bert-base-chinese"
+
+# AutoModelForCausalLM.from_pretrained(model_name, cache_dir=cache_dir)
+# AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+
+tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir)
+model = AutoModelForMaskedLM.from_pretrained(model_name, cache_dir=cache_dir)
+print(f"模型分词器下载到：{cache_dir}")
+
+
